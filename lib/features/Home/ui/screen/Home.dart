@@ -47,7 +47,8 @@ class _HomeState extends State<Home> {
                       ? CircularProgressIndicator(
                           color: colors.primary,
                         )
-                      : Container(
+                      :
+                       Container(
                           width: MediaQuery.sizeOf(context).width - 10,
                           height: 200.h,
                           decoration: BoxDecoration(

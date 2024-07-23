@@ -6,10 +6,10 @@ import 'package:qurana/core/theming/colors.dart';
 import 'package:qurana/core/theming/size.dart';
 import 'package:qurana/core/theming/style.dart';
 import 'package:qurana/features/muslim_features/muslim_features/cubit/cubit/muslim_cubit.dart';
-import 'package:qurana/features/muslim_features/muslim_features/data/model/quran_model.dart';
+import 'package:qurana/features/muslim_features/muslim_features/ui/screens/playSourah.dart';
 import 'package:qurana/features/muslim_features/muslim_features/ui/screens/surah.dart';
 import 'package:qurana/features/muslim_features/muslim_features/ui/widgets/appbarWidget.dart';
-import 'package:qurana/features/muslim_features/muslim_features/ui/widgets/quran_widget.dart';
+
 
 class QuranList extends StatefulWidget {
   const QuranList({super.key});
@@ -173,6 +173,7 @@ class _QuranListState extends State<QuranList> {
                                           children: [
                                             size.height(15),
                                             Text(
+                                              
                                               cubit.quranlist[index]["name"],
                                               style: textstyle.subtitle
                                                   .copyWith(
@@ -204,7 +205,8 @@ class _QuranListState extends State<QuranList> {
                                                     size.height(15),
                                                     GestureDetector(
                                                       onTap: () {
-                                                        //        context.navigateTo(playSuarh(id:cubit.quranlist[index!]['number'],name:cubit.quranlist[index!]['name'],englishname: cubit.quranlist[index!]['englishName'],));
+                                                              context.navigateTo(
+                                                            PlaySourah(id:cubit.quranlist[index]['number'],name:cubit.quranlist[index]['name'],englishname: cubit.quranlist[index]['englishName'],));
                                                       },
                                                       child: Container(
                                                         width: 55.w,
@@ -235,7 +237,8 @@ class _QuranListState extends State<QuranList> {
                                                     size.height(15),
                                                     GestureDetector(
                                                       onTap: () {
-                                                         context.navigateTo(Sourah(id:cubit.quranlist[index!]['number']));
+                                                         context.navigateTo(Sourah(id:cubit.quranlist[index]['number'],name: cubit.quranlist[
+                                                              index]['name'] ,en_name: cubit.quranlist[index]['englishName'],));
                                                         // context.navigateTo(
                                                         //     Sourah());
                                                       },

@@ -3,11 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:qurana/features/muslim_features/muslim_features/ui/screens/azkar.dart';
-import 'package:qurana/features/muslim_features/muslim_features/ui/screens/duaa.dart';
-import 'package:qurana/features/muslim_features/muslim_features/ui/screens/tasph.dart';
 import 'package:qurana/features/navi/ui/screens/navi.dart';
-import 'package:qurana/features/user_Info/ui/screens/user_ifo.dart';
 import 'package:qurana/firebase_options.dart';
 import 'package:qurana/generated/l10n.dart';
 import 'package:qurana/features/Auth/ui/screens/signup.dart';
@@ -38,6 +34,7 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         localizationsDelegates: [
           S.delegate,
           GlobalMaterialLocalizations.delegate,

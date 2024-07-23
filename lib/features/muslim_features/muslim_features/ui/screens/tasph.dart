@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:qurana/core/routing/router.dart';
 import 'package:qurana/core/theming/colors.dart';
 import 'package:qurana/core/theming/size.dart';
 import 'package:qurana/core/theming/style.dart';
 import 'package:qurana/features/muslim_features/muslim_features/cubit/cubit/muslim_cubit.dart';
 import 'package:qurana/features/muslim_features/muslim_features/data/model/tasphmodel.dart';
-import 'package:qurana/features/muslim_features/muslim_features/data/model/zeker_model.dart';
 import 'package:qurana/features/muslim_features/muslim_features/ui/widgets/appbarWidget.dart';
-import 'package:qurana/features/muslim_features/muslim_features/ui/widgets/tasph_widget.dart';
-import 'package:qurana/features/muslim_features/muslim_features/ui/widgets/zekre.dart';
-import 'package:qurana/features/navi/ui/screens/navi.dart';
+import 'package:qurana/features/muslim_features/muslim_features/ui/widgets/tasph/tasph_widget.dart';
+
 
 class Taspih extends StatefulWidget {
   const Taspih({super.key});

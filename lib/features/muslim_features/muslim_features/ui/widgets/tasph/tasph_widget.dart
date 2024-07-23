@@ -5,6 +5,7 @@ import 'package:qurana/core/theming/size.dart';
 import 'package:qurana/core/theming/style.dart';
 import 'package:qurana/features/muslim_features/muslim_features/data/model/tasphmodel.dart';
 
+
 class TasphWidget extends StatelessWidget {
   int? x;
 
@@ -42,6 +43,6 @@ class TasphWidget extends StatelessWidget {
         ],
       ),
     );
-    ;
+    
   }
 }

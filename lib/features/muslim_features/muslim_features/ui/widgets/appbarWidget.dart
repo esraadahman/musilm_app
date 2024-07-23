@@ -4,6 +4,7 @@ import 'package:qurana/core/routing/router.dart';
 import 'package:qurana/core/theming/colors.dart';
 import 'package:qurana/core/theming/style.dart';
 
+
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   String? text;
 

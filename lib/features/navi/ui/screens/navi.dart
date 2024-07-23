@@ -4,14 +4,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qurana/core/theming/colors.dart';
 import 'package:qurana/core/theming/size.dart';
 import 'package:qurana/features/Home/ui/screen/Home.dart';
+import 'package:qurana/features/chat/ui/screens/chats.dart';
 import 'package:qurana/features/muslim_features/category/ui/screens/category.dart';
 import 'package:qurana/features/user_Info/ui/screens/settings.dart';
 
 List<Widget> screens = [
   Home(),
-  Container(
-    child: Center(child: Text("CHAT")),
-  ),
+  Chats(),
   Container(
     child: Center(child: Text("VEDIO")),
   ),
@@ -43,7 +42,8 @@ class _naviState extends State<navi> {
         floatingActionButton: Container(
             margin: EdgeInsets.only(bottom: 5, left: 30),
             height: 50.h,
-            width: 350.sp,
+          //  width: 350.sp,
+          width: MediaQuery.sizeOf(context).width,
             color: colors.background,
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
