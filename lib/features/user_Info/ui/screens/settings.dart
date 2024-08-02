@@ -1,9 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:qurana/core/routing/router.dart';
 import 'package:qurana/core/theming/colors.dart';
 import 'package:qurana/core/theming/size.dart';
 import 'package:qurana/core/theming/style.dart';
+import 'package:qurana/features/Auth/data/network.dart';
+import 'package:qurana/features/Auth/ui/screens/signin.dart';
 
 class Settings extends StatefulWidget {
   const Settings({super.key});
@@ -57,9 +60,32 @@ class _SettingsState extends State<Settings> {
                       ],
                     ),
                   ],
-                )
+                ),
               ],
             ),
+            size.height(30),
+            InkWell(
+              onTap: () {
+                networkAuth.signOut();
+                context.navigateTo(signin());
+              },
+              child: Container(
+                height: 50.h,
+                width: 300.w,
+                decoration: BoxDecoration(
+                  color: colors.primary,
+                  borderRadius: BorderRadius.circular(10.r),
+                ),
+                child: Center(
+                  child: Text(
+                    "Sign Out",
+                    style: textstyle.maintitle.copyWith(
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),

@@ -58,7 +58,7 @@ class networkAuth {
     return "null";
   }
 
-  Future<String> signOut() async {
+  static Future<String> signOut() async {
     try {
       await FirebaseAuth.instance.signOut();
 

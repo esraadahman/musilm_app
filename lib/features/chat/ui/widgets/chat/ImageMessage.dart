@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qurana/core/theming/colors.dart';
 import 'package:qurana/core/theming/style.dart';
 import 'package:qurana/core/theming/size.dart';
+import 'package:qurana/features/chat/cubit/chat/cubit/chat_cubit.dart';
 import 'package:video_player/video_player.dart';
 
 class ImageMessage extends StatefulWidget {
@@ -14,6 +15,7 @@ class ImageMessage extends StatefulWidget {
   bool? seen;
   bool? isSender;
   bool? isVideo;
+  final ChatCubit cubit;
 
   ImageMessage(
       {super.key,
@@ -22,13 +24,17 @@ class ImageMessage extends StatefulWidget {
       required this.messageUrl,
       required this.seen,
       required this.isSender,
-      required this.isVideo});
+      required this.isVideo,
+      required this.cubit
+      });
 
   @override
   State<ImageMessage> createState() => _ImageMessageState();
 }
 
 class _ImageMessageState extends State<ImageMessage> {
+
+
   late VideoPlayerController _videoPlayerController;
 
   late ChewieController _chewieController;
@@ -57,10 +63,13 @@ class _ImageMessageState extends State<ImageMessage> {
     _videoPlayerController.dispose();
     _chewieController.dispose();
   }
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.sizeOf(context).width * .5,
+      width: widget.isVideo==true? MediaQuery.sizeOf(context).width * .6
+      :MediaQuery.sizeOf(context).width * .5,
       padding: EdgeInsets.all(10),
       margin: EdgeInsets.only(right: 20, left: 10),
       decoration: BoxDecoration(
@@ -68,8 +77,12 @@ class _ImageMessageState extends State<ImageMessage> {
         borderRadius: BorderRadius.only(
             topLeft: Radius.circular(20),
             topRight: Radius.circular(20),
-            bottomRight: widget.isSender == false? Radius.circular(20) : Radius.circular(0),
-            bottomLeft:widget.isSender==true? Radius.circular(20): Radius.circular(0)),
+            bottomRight: widget.isSender == false
+                ? Radius.circular(20)
+                : Radius.circular(0),
+            bottomLeft: widget.isSender == true
+                ? Radius.circular(20)
+                : Radius.circular(0)),
       ),
       child: Column(
         children: [
@@ -86,25 +99,26 @@ class _ImageMessageState extends State<ImageMessage> {
             ],
           ),
           Container(
-              width:  MediaQuery.sizeOf(context).width * .5,
-          height:  150.h,
-            decoration: widget.isVideo==true?BoxDecoration() :BoxDecoration(
-                image: DecorationImage(
-                    image:  AssetImage(widget.messageUrl!), fit: BoxFit.cover)),
-          child: widget.isVideo == true
+              width: MediaQuery.sizeOf(context).width * .5,
+              height: 150.h,
+              decoration: 
+              widget.isVideo == true
+                  ? BoxDecoration()
+                  : 
+                  BoxDecoration(
+                      image: DecorationImage(
+                          image: NetworkImage(widget.messageUrl!),
+                          fit: BoxFit.cover)),
+              child: widget.isVideo == true
                   ? AspectRatio(
                       aspectRatio: 16 / 9,
                       child: Chewie(
                         controller: _chewieController,
                       ))
                   : null
-          // decoration: BoxDecoration(
-          // //  image: DecorationImage(image: NetworkImage(messageUrl!),
-          //  image: DecorationImage(image: AssetImage(widget.messageUrl!),
-          //   fit: BoxFit.cover)
-        //  ),
-          
-          ),
+            
+
+              ),
           Row(
             //mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -116,7 +130,7 @@ class _ImageMessageState extends State<ImageMessage> {
               ),
               size.width(80.w),
               Icon(
-              widget.seen==true?  Icons.done_all:Icons.done,
+                widget.seen == true ? Icons.done_all : Icons.done,
                 color: colors.text,
               )
             ],

@@ -7,8 +7,14 @@ class UsersSends extends StatefulWidget {
   String imgPath;
   String userName;
   String message;
+  String time;
 
-   UsersSends({super.key, required this.imgPath, required this.userName, required this.message});
+  UsersSends(
+      {super.key,
+      required this.imgPath,
+      required this.userName,
+      required this.message,
+      required this.time});
 
   @override
   State<UsersSends> createState() => _UsersSendsState();
@@ -20,20 +26,21 @@ class _UsersSendsState extends State<UsersSends> {
     return ListTile(
       leading: CircleAvatar(
         radius: 30.r,
-        backgroundImage: AssetImage("images/Rectangle5.png"),
+        //  backgroundImage: AssetImage("images/Rectangle5.png"),
+        backgroundImage: NetworkImage(widget.imgPath),
       ),
       title: Text(
-        "user name",
+        widget.userName,
         style: textstyle.maintitle.copyWith(
           fontSize: 20,
         ),
       ),
       subtitle: Text(
-        "message",
+        widget.message,
         style: textstyle.subtitle.copyWith(fontSize: 15, color: colors.text),
       ),
       trailing: Text(
-        "time",
+        widget.time,
         style: textstyle.subtitle.copyWith(fontSize: 15, color: colors.text),
       ),
     );

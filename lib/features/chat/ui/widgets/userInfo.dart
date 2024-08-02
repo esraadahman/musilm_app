@@ -23,26 +23,34 @@ class UserInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        context.navigateTo(ProfileScreen());
+        context.navigateTo(ProfileScreen(
+          name: userName,
+          imagepath: imgPath,
+          email: "esraa@",
+          phone: '123456789',
+          info: 'cairo',
+          lastSeen: 'soon',
+        ));
       },
       child: Row(
         //mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           CircleAvatar(
             radius: 30.r,
-            backgroundImage: AssetImage("images/Rectangle5.png"),
+            //  backgroundImage: AssetImage("images/Rectangle5.png"),
+            backgroundImage: NetworkImage(imgPath),
           ),
-          size.width(15),
+          size.width(5),
           Column(
             children: [
               Text(
-                "user name",
+                userName,
                 style: textstyle.maintitle.copyWith(
                   fontSize: 20,
                 ),
               ),
               Text(
-                "Active Now",
+                other,
                 style: textstyle.subtitle
                     .copyWith(fontSize: 15, color: colors.text),
               ),

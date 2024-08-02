@@ -18,7 +18,8 @@ class ProfileHeader extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('images/Rectangle9.png'),
+            //  image: AssetImage('images/Rectangle9.png'),
+            image:  NetworkImage(imagePath!),
               fit: BoxFit.cover,
             ),
           ),

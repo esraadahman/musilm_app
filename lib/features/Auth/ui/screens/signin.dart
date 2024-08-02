@@ -156,7 +156,7 @@ class _signinState extends State<signin> {
                         color: colors.primary),
                     child: Center(
                       child: Text(
-                        state is SignInLoading ? 'Loading..' : 'Sign Up',
+                        state is SignInLoading ? 'Loading..' : 'Sign In',
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                     ),

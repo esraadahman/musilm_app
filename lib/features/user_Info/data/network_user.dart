@@ -34,25 +34,12 @@ class UserNetwork {
       'phonenumber': phonenumber,
       'age': age,
       'gender': gender,
-      'email': FirebaseAuth.instance.currentUser!.email
+      'email': FirebaseAuth.instance.currentUser!.email,
+      'uId':FirebaseAuth.instance.currentUser!.uid
     });
   }
 
-  // static final auth = FirebaseAuth.instance;
-  // static Future<void> sendUserData(String name, String country, String city,
-  //     String phonenumber, String age, String gender) async {
-  //   await FirebaseFirestore.instance
-  //       .collection('users')
-  //       .doc(auth.currentUser!.uid)
-  //       .set({
-  //     'name': name,
-  //     'country': country,
-  //     'city': city,
-  //     'phonenumber': phonenumber,
-  //     'age': age,
-  //     'gender': gender,
-  //     'email': auth.currentUser!.email
-  //   });
-  //   print("ADDED user info");
-  // }
+
+
+
 }

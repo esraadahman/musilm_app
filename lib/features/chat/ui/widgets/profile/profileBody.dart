@@ -43,9 +43,9 @@ class ProfileBody extends StatelessWidget {
         //user email
         size.height(20),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+      //    mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            //  size.width(MediaQuery.of(context).size.width * 0.2),
+              size.width(MediaQuery.of(context).size.width * 0.2),
 
             // email icon
             Icon(
@@ -53,7 +53,7 @@ class ProfileBody extends StatelessWidget {
               size: 20.sp,
               color: colors.text,
             ),
-            //  size.width(10.w),
+              size.width(10.w),
             Text(
               " ${email}",
               style: textstyle.maintitle.copyWith(fontSize: 15.sp),
@@ -62,9 +62,9 @@ class ProfileBody extends StatelessWidget {
         ),
         size.height(20),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+        //  mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            //size.width(MediaQuery.of(context).size.width * 0.2),
+            size.width(MediaQuery.of(context).size.width * 0.2),
 
             // phone icon
             Icon(
@@ -72,7 +72,7 @@ class ProfileBody extends StatelessWidget {
               size: 20.sp,
               color: colors.text,
             ),
-            //  size.width(10.w),
+              size.width(10.w),
             Text(
               '    ${phone}',
               style: textstyle.maintitle.copyWith(fontSize: 15.sp),
